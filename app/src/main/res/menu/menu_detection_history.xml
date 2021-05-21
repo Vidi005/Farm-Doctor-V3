@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group>
+        <item
+            android:id="@+id/app_bar_search"
+            android:icon="@drawable/ic_search_white"
+            android:title="Search"
+            app:actionViewClass="androidx.appcompat.widget.SearchView"
+            app:showAsAction="always" />
+        <item
+            android:id="@+id/app_bar_delete_all"
+            android:icon="@drawable/ic_delete_all"
+            android:title="Delete All"
+            app:showAsAction="ifRoom" />
+    </group>
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/app_bar_sort_by_name"
+            android:checked="true"
+            android:title="Sort by Name (Asc)" />
+        <item
+            android:id="@+id/app_bar_sort_by_name_desc"
+            android:checked="false"
+            android:title="Sort by Name (Desc)" />
+        <item
+            android:id="@+id/app_bar_sort_by_date"
+            android:checked="false"
+            android:title="Sort by Date (Asc)" />
+        <item
+            android:id="@+id/app_bar_sort_by_date_desc"
+            android:checked="false"
+            android:title="Sort by Date (Desc)" />
+        <item
+            android:id="@+id/app_bar_show_from_cam"
+            android:checked="false"
+            android:title="Show from Camera only" />
+        <item
+            android:id="@+id/app_bar_show_from_file"
+            android:checked="false"
+            android:title="Show from File only" />
+    </group>
+</menu>

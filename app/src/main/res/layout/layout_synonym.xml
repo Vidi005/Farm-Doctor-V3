@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C5E1A5"
+    android:paddingLeft="4dp"
+    android:paddingRight="4dp">
+
+    <TextView
+        android:id="@+id/tv_synonym_bar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sub_detail_border"
+        android:gravity="center"
+        android:padding="4dp"
+        android:text="Synonyms"
+        android:textColor="@color/colorTitleText"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_no_synonym"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/ic_no_synonym"
+        android:visibility="invisible"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@+id/tv_no_synonym"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_synonym_bar" />
+
+    <TextView
+        android:id="@+id/tv_no_synonym"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="There is no synonym data"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/iv_no_synonym"
+        app:layout_constraintStart_toStartOf="@+id/iv_no_synonym"
+        app:layout_constraintTop_toBottomOf="@+id/iv_no_synonym" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list_synonym"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_synonym_bar"
+        tools:listitem="@layout/item_list_synonyms" />
+</androidx.constraintlayout.widget.ConstraintLayout>

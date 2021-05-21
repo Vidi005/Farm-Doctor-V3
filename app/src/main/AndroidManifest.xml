@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.android.farmdoctor">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera2.autofocus" />
+
+    <application
+        android:name=".data.source.local.room.databaseinspector.MyApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/fd_logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/fd_logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.FarmDoctorV3"
+        android:usesCleartextTraffic="true"
+        android:requestLegacyExternalStorage="true"
+        tools:ignore="AllowBackup,UnusedAttribute">
+        <activity android:name=".ui.AboutActivity" />
+        <activity android:name=".ui.SplashScreenActivity"
+            android:theme="@style/AppThemeSplashScreen"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.MainActivity" >
+            <nav-graph android:value="@navigation/main_navigation" />
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.android.farmdoctor.ui.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_plantSpeciesFragment"
+            app:destination="@id/plantSpeciesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_plantDiseasesFragment"
+            app:destination="@id/plantDiseasesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_detectionFragment"
+            app:destination="@id/detectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_detectionHistoriesFragment"
+            app:destination="@id/detectionHistoriesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_homeFragment_to_aboutActivity"
+            app:destination="@id/aboutActivity"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantSpeciesFragment"
+        android:name="com.android.farmdoctor.ui.plant.PlantSpeciesFragment"
+        android:label="fragment_plant_species"
+        tools:layout="@layout/fragment_plant_species" >
+        <action
+            android:id="@+id/action_plantSpeciesFragment_to_detailPlantSpeciesFragment"
+            app:destination="@id/detailPlantSpeciesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detectionHistoriesFragment"
+        android:name="com.android.farmdoctor.ui.history.DetectionHistoriesFragment"
+        android:label="fragment_detection_history"
+        tools:layout="@layout/fragment_detection_history" >
+        <action
+            android:id="@+id/action_detectionHistoriesFragment_to_detailDetectionHistoryFragment"
+            app:destination="@id/detailDetectionHistoryFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detectionFragment"
+        android:name="com.android.farmdoctor.ui.detection.DetectionFragment"
+        android:label="fragment_detection"
+        tools:layout="@layout/fragment_detection" >
+        <action
+            android:id="@+id/action_detectionFragment_to_detailPlantDiseaseFragment"
+            app:destination="@id/detailPlantDiseaseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/plantDiseasesFragment"
+        android:name="com.android.farmdoctor.ui.disease.PlantDiseasesFragment"
+        android:label="fragment_plant_diseases"
+        tools:layout="@layout/fragment_plant_diseases" >
+        <action
+            android:id="@+id/action_plantDiseasesFragment_to_detailPlantDiseaseFragment"
+            app:destination="@id/detailPlantDiseaseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPlantSpeciesFragment"
+        android:name="com.android.farmdoctor.ui.plant.DetailPlantSpeciesFragment"
+        android:label="fragment_detail_plant_species"
+        tools:layout="@layout/fragment_detail_plant_species" />
+    <fragment
+        android:id="@+id/detailDetectionHistoryFragment"
+        android:name="com.android.farmdoctor.ui.history.DetailDetectionHistoryFragment"
+        android:label="fragment_detail_detection_history"
+        tools:layout="@layout/fragment_detail_detection_history" />
+    <fragment
+        android:id="@+id/detailPlantDiseaseFragment"
+        android:name="com.android.farmdoctor.ui.disease.DetailPlantDiseaseFragment"
+        android:label="fragment_detail_plant_disease"
+        tools:layout="@layout/fragment_detail_plant_disease" />
+    <activity
+        android:id="@+id/aboutActivity"
+        android:name="com.android.farmdoctor.ui.AboutActivity"
+        android:label="activity_about"
+        tools:layout="@layout/activity_about" />
+</navigation>
