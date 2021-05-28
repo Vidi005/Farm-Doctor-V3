@@ -1,5 +1,7 @@
 # Farm-Doctor-V3
 Farm Doctor Version 3.0
+<br>
+Mobile Android App for Diagnosing plant leaf diseases from camera and image gallery using TensorFlow Lite.
 ### Author: Vidi Fitriansyah Hidarlan
 
 Update for Farm Doctor App
