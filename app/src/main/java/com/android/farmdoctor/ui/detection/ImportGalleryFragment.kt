@@ -114,9 +114,7 @@ class ImportGalleryFragment : Fragment(), View.OnClickListener, OnResultItemClic
         }
     }
 
-    override fun onItemClicked(data: Detection) {
-        setSelectedPlantDisease(data)
-    }
+    override fun onItemClicked(data: Detection) = setSelectedPlantDisease(data)
 
     private fun enableDetectionHistory() {
         fragmentImportGalleryBinding.cbEnableHistory.isChecked =

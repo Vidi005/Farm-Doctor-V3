@@ -84,7 +84,11 @@ class CameraFragment : Fragment(), View.OnClickListener, OnResultItemClickCallba
         showListResult()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray)
+    {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_CAMERA_CODE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) canUseCamera = true
@@ -396,8 +400,10 @@ class CameraFragment : Fragment(), View.OnClickListener, OnResultItemClickCallba
             fragmentCameraBinding.swEnableLocation.isChecked =
                 cameraPreference.getLocation(requireActivity())
             if (fragmentCameraBinding.swEnableLocation.isChecked) {
-                val isFineLocationEnabled = locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
-                val isCoarseLocationEnabled = locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
+                val isFineLocationEnabled =
+                    locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)
+                val isCoarseLocationEnabled =
+                    locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
                 if (isFineLocationEnabled || isCoarseLocationEnabled) {
                     checkLocationPermissions()
                     fragmentCameraBinding.tvProcess.text = "Getting Location..."

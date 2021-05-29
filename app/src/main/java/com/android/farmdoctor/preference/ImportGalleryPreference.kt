@@ -12,17 +12,20 @@ internal class ImportGalleryPreference {
     }
 
     fun setDetectionHistory(context: Context) {
-        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY, Context.MODE_PRIVATE) as SharedPreferences
+        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY,
+                Context.MODE_PRIVATE) as SharedPreferences
         preferences.edit { putBoolean(PREFS_GALLERY_DETECTION_HISTORY, true) }
     }
 
     fun getDetectionHistory(context: Context): Boolean {
-        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY, Context.MODE_PRIVATE) as SharedPreferences
+        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY,
+                Context.MODE_PRIVATE) as SharedPreferences
         return preferences.getBoolean(PREFS_GALLERY_DETECTION_HISTORY, false)
     }
 
     fun unsetDetectionHistory(context: Context) {
-        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY, Context.MODE_PRIVATE) as SharedPreferences
+        preferences = context.getSharedPreferences(PREFS_GALLERY_DETECTION_HISTORY,
+                Context.MODE_PRIVATE) as SharedPreferences
         preferences.edit { clear() }
     }
 }

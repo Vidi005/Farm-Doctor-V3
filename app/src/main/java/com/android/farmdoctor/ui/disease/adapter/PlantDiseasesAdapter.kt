@@ -16,9 +16,10 @@ import java.util.*
 import kotlin.collections.ArrayList
 
 class PlantDiseasesAdapter(
-        private val listPlantDiseases: ArrayList<PlantDisease>,
-        private val callback: OnDiseaseItemClickCallback) :
-        RecyclerView.Adapter<PlantDiseasesAdapter.GridViewHolder>(), Filterable {
+    private val listPlantDiseases: ArrayList<PlantDisease>,
+    private val callback: OnDiseaseItemClickCallback) :
+    RecyclerView.Adapter<PlantDiseasesAdapter.GridViewHolder>(), Filterable
+{
 
     private var filterListPlantDiseases = listPlantDiseases
     companion object {

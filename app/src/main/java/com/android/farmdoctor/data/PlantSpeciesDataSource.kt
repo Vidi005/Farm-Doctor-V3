@@ -10,7 +10,8 @@ import com.android.farmdoctor.vo.Resource
 
 interface PlantSpeciesDataSource {
 
-    fun getPlantSpecies(searchQuery: String, page: Int, order: Map<String, String>): LiveData<ApiResponse<List<PlantSpeciesEntity>>>
+    fun getPlantSpecies(searchQuery: String, page: Int, order: Map<String, String>):
+        LiveData<ApiResponse<List<PlantSpeciesEntity>>>
     fun getMeta(searchQuery: String, page: Int, order: Map<String, String>): LiveData<ApiResponse<MetaEntity>>
     fun getPlantSpeciesWithSynonyms(scientificName: String): LiveData<Resource<PlantSpeciesWithSynonym>>
 }

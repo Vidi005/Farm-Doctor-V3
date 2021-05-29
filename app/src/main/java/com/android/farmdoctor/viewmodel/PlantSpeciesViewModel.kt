@@ -15,11 +15,12 @@ class PlantSpeciesViewModel(private val plantSpeciesRepository: PlantSpeciesRepo
     private val _itemsCount = MutableLiveData<ItemsCountEntity>()
     val itemCounts: LiveData<ItemsCountEntity> get() = _itemsCount
 
-    fun getPlantSpecies(searchQuery: String, page: Int, order: Map<String, String>): LiveData<ApiResponse<List<PlantSpeciesEntity>>> =
-        plantSpeciesRepository.getPlantSpecies(searchQuery, page, order)
+    fun getPlantSpecies(searchQuery: String, page: Int, order: Map<String, String>):
+        LiveData<ApiResponse<List<PlantSpeciesEntity>>> =
+            plantSpeciesRepository.getPlantSpecies(searchQuery, page, order)
 
-    fun getMeta(searchQuery: String, page: Int, order: Map<String, String>): LiveData<ApiResponse<MetaEntity>> =
-        plantSpeciesRepository.getMeta(searchQuery, page, order)
+    fun getMeta(searchQuery: String, page: Int, order: Map<String, String>):
+        LiveData<ApiResponse<MetaEntity>> = plantSpeciesRepository.getMeta(searchQuery, page, order)
 
     fun getItemCounts(itemsCount: ItemsCountEntity) {
         _itemsCount.value = itemsCount

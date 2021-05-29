@@ -27,7 +27,9 @@ class DetectionHistoryRepository private constructor(
     }
     private val geocodeResult = MediatorLiveData<Resource<LocationAddress>>()
 
-    override fun getDetectionHistories(filter: String): LiveData<Resource<PagedList<DetectionHistoryEntity>>> {
+    override fun getDetectionHistories(filter: String):
+        LiveData<Resource<PagedList<DetectionHistoryEntity>>>
+    {
         val config = PagedList.Config.Builder()
             .setEnablePlaceholders(true)
             .setInitialLoadSizeHint(10)
@@ -137,7 +139,8 @@ class DetectionHistoryRepository private constructor(
                 }
             } catch (e: Exception) {
                 withContext(Dispatchers.Main) {
-                    Resource.error("${e.message}", remoteDataSource.geocodeLocationAddress(latitude, longitude))
+                    Resource.error("${e.message}",
+                        remoteDataSource.geocodeLocationAddress(latitude, longitude))
                 }
             }
         }

@@ -48,8 +48,10 @@ class DetectionHistoriesFragment : Fragment(), OnHistoryItemClickCallback, OnQue
     private var menu: Menu? = null
     private var filter = NAME_ASC
     private val itemTouchHelper = ItemTouchHelper(object : ItemTouchHelper.Callback() {
-        override fun getMovementFlags(recyclerView: RecyclerView, viewHolder: RecyclerView.ViewHolder): Int =
-            makeMovementFlags(0, ItemTouchHelper.LEFT)
+        override fun getMovementFlags(
+            recyclerView: RecyclerView,
+            viewHolder: RecyclerView.ViewHolder): Int =
+                makeMovementFlags(0, ItemTouchHelper.LEFT)
 
         override fun onMove(recyclerView: RecyclerView,
             viewHolder: RecyclerView.ViewHolder,

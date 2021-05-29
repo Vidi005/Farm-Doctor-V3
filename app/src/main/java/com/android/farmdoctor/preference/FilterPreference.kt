@@ -13,12 +13,14 @@ internal class FilterPreference(private val context: Context) {
     }
 
     fun setFilterBy(filter: String) {
-        preferences = context.getSharedPreferences(PREFS_FILTER, Context.MODE_PRIVATE) as SharedPreferences
+        preferences =
+            context.getSharedPreferences(PREFS_FILTER, Context.MODE_PRIVATE) as SharedPreferences
         preferences.edit { putString(PREFS_FILTER, filter) }
     }
 
     fun getFilterBy(): String {
-        preferences = context.getSharedPreferences(PREFS_FILTER, Context.MODE_PRIVATE) as SharedPreferences
+        preferences =
+            context.getSharedPreferences(PREFS_FILTER, Context.MODE_PRIVATE) as SharedPreferences
         return preferences.getString(PREFS_FILTER, NAME_ASC) as String
     }
 }

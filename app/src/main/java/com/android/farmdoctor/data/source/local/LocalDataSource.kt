@@ -31,8 +31,9 @@ class LocalDataSource private constructor(private val mFarmDoctorDao: FarmDoctor
         return mFarmDoctorDao.getDetectionHistories(filter)
     }
 
-    fun getSearchDetectionHistories(searchQuery: String): DataSource.Factory<Int, DetectionHistoryEntity> =
-        mFarmDoctorDao.getSearchDetectionHistories(searchQuery)
+    fun getSearchDetectionHistories(searchQuery: String):
+        DataSource.Factory<Int, DetectionHistoryEntity> =
+            mFarmDoctorDao.getSearchDetectionHistories(searchQuery)
 
     suspend fun insertDetectionHistory(detectionHistory: DetectionHistoryEntity) =
         mFarmDoctorDao.insertDetectionHistory(detectionHistory)

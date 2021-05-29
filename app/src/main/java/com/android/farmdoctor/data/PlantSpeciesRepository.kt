@@ -56,9 +56,13 @@ class PlantSpeciesRepository private constructor(
         return plantSpeciesResults
     }
 
-    override fun getMeta(searchQuery: String, page: Int, order: Map<String, String>): LiveData<ApiResponse<MetaEntity>> {
+    override fun getMeta(searchQuery: String, page: Int, order: Map<String, String>):
+        LiveData<ApiResponse<MetaEntity>>
+    {
         val metaResult = MutableLiveData<ApiResponse<MetaEntity>>()
-        remoteDataSource.getMeta(searchQuery, page, order, object : RemoteDataSource.LoadLinksCallback {
+        remoteDataSource.getMeta(searchQuery, page, order, object :
+            RemoteDataSource.LoadLinksCallback
+        {
             override fun onGetMeta(metaResponse: ApiResponse<Meta>) {
                 val metaData =  MetaEntity(metaResponse.body.total)
                 metaResult.postValue(ApiResponse.success(metaData))

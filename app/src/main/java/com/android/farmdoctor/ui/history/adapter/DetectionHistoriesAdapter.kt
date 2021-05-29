@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 
 class DetectionHistoriesAdapter(private val callback: OnHistoryItemClickCallback) :
-    PagedListAdapter<DetectionHistoryEntity, DetectionHistoriesAdapter.DetectionHistoriesViewHolder>(DIFF_CALLBACK) {
+        PagedListAdapter<DetectionHistoryEntity,
+        DetectionHistoriesAdapter.DetectionHistoriesViewHolder>(DIFF_CALLBACK)
+{
 
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<DetectionHistoryEntity>() {

@@ -17,7 +17,8 @@ object Injection {
 
     fun providePlantSpeciesRepository(activity: Activity): PlantSpeciesRepository {
         val database = FarmDoctorDatabase.getInstance(activity)
-        val remoteDataSource = RemoteDataSource.getInstance(LocationHelper(activity), Geocode(activity))
+        val remoteDataSource =
+            RemoteDataSource.getInstance(LocationHelper(activity), Geocode(activity))
         val localDataSource = LocalDataSource.getInstance(database.farmDoctorDao())
         return PlantSpeciesRepository.getInstance(remoteDataSource, localDataSource)
     }

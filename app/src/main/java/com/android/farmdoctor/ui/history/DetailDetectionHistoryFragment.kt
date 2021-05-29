@@ -61,7 +61,11 @@ class DetailDetectionHistoryFragment : Fragment() {
         getDetailViewModelLiveData()
     }
 
-    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray)
+    {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_READ_EXTERNAL_STORAGE) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) canReadExtStorage = true
@@ -183,7 +187,8 @@ class DetailDetectionHistoryFragment : Fragment() {
                 ivDetectionBasedReceived.setImageResource(R.drawable.ic_camera)
             else ivDetectionBasedReceived.setImageResource(R.drawable.ic_gallery)
             tvHistoryNameReceived.text = StringBuilder("Name: ${detailDetectionHistory.name}")
-            tvHistoryAccReceived.text = StringBuilder("Probability: ${detailDetectionHistory.accuracy}%")
+            tvHistoryAccReceived.text =
+                StringBuilder("Probability: ${detailDetectionHistory.accuracy}%")
             tvHistoryDateReceived.text = detailDetectionHistory.date
             tvHistoryLatencyReceived.text = StringBuilder("${detailDetectionHistory.latency} ms")
             dataLatitude = "${detailDetectionHistory.latitude}"
@@ -226,7 +231,11 @@ class DetailDetectionHistoryFragment : Fragment() {
 //                Toast.makeText(activity, "${e.message}", Toast.LENGTH_LONG).show()
 //            }
             @Suppress("DEPRECATION")
-            val path = MediaStore.Images.Media.insertImage(requireActivity().contentResolver, shareImage, "${detectionHistory?.name}", null)
+            val path = MediaStore.Images.Media.insertImage(
+                    requireActivity().contentResolver,
+                    shareImage,
+                    "${detectionHistory?.name}",
+                    null)
             val uri = Uri.parse(path)
             shareIntent.type = "image/jpeg"
             shareIntent.putExtra(Intent.EXTRA_STREAM, uri)

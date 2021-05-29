@@ -32,7 +32,12 @@ class RemoteDataSource private constructor(
         private val TAG = RemoteDataSource::class.java.simpleName
     }
 
-    fun getSearchQueryPlantSpecies(searchQuery: String, page: Int, order: Map<String, String>, callback: LoadSearchPlantSpeciesCallback) {
+    fun getSearchQueryPlantSpecies(
+        searchQuery: String,
+        page: Int,
+        order: Map<String, String>,
+        callback: LoadSearchPlantSpeciesCallback)
+    {
         val client = getApiService().getPlantSpecies(API_KEY, searchQuery, page, order)
         client.enqueue(object : Callback<TrefleResponse> {
             override fun onResponse(
@@ -58,11 +63,17 @@ class RemoteDataSource private constructor(
         fun onSearchPlantSpeciesReceived(plantSpeciesResponse: ApiResponse<List<DataItem>>)
     }
 
-    fun getMeta(searchQuery: String, page: Int, order: Map<String, String>, callback: LoadLinksCallback) {
+    fun getMeta(
+        searchQuery: String,
+        page: Int,
+        order: Map<String, String>,
+        callback: LoadLinksCallback)
+    {
         val client = getApiService().getPlantSpecies(API_KEY, searchQuery, page, order)
         client.enqueue(object : Callback<TrefleResponse> {
             override fun onResponse(call: Call<TrefleResponse>, response: Response<TrefleResponse>) {
-                if (response.isSuccessful) callback.onGetMeta(ApiResponse.success(response.body()?.meta as Meta))
+                if (response.isSuccessful)
+                    callback.onGetMeta(ApiResponse.success(response.body()?.meta as Meta))
                 else {
                     ApiResponse.empty(response.message(), response.errorBody())
                     Log.e(TAG, response.message())
@@ -86,7 +97,8 @@ class RemoteDataSource private constructor(
         client.enqueue(object : Callback<TrefleResponse> {
             override fun onResponse(call: Call<TrefleResponse>, response: Response<TrefleResponse>) {
                 if (response.isSuccessful)
-                    resultDetailPlantSpecies.postValue(ApiResponse.success(response.body()?.data?.get(0) as DataItem))
+                    resultDetailPlantSpecies
+                        .postValue(ApiResponse.success(response.body()?.data?.get(0) as DataItem))
                 else {
                     ApiResponse.empty(response.message(), response.errorBody())
                     Log.e(TAG, response.message())
